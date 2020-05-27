@@ -47,7 +47,7 @@
             </a>
           </li>
         </ul>
-        <label for="text"><strong> Parsal Tracker<strong></label>
+        <label for="text"><strong> Parcel Tracker<strong></label>
         <input type="text" placeholder="Parcel Tracker" style="direction: rtl; text-align: left;">
       </div>
 
@@ -73,14 +73,11 @@
           <div class="tile is-child box">
               <p class="sub-title">Nairobi</p>
             <p class="sub-title">Kenya</p>
-            <h5>  Corner Park RD & Abidjan RD <br>
-                Nonad Petrol Station <br>
+            <h5>  Corner Park Rd & Abidjan Rd <br>
+                Nomad Petrol Station <br>
                 Tel: +254 79 267 4681 <br>
                 Tel: +254 71 289 1753 <br>
-                >
-                
-
-            </h5>
+             </h5>
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d997.2087805754163!2d36.83160848220902!3d-1.2720099000000085!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f17bf9bcef879%3A0x814d9284210091aa!2sNOMAD%20PETROL%20STATION!5e0!3m2!1sen!2sza!4v1590502944267!5m2!1sen!2sza" width="350" height="220" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           </div>
         </div>
@@ -156,11 +153,11 @@
                     </head>
                     <body>
                     
-                    <h2>Request for Quote</h2>
+                    <h2 class="sent-notification">Request for Quote</h2>
                     
                     
                     <div class="container">
-                      <form action="/action_page.php">
+                      <form id="myForm" action="/contactus.html" method="POST">
                       <div class="row">
                         <div class="col-25">
                           <label for="fname">First Name</label>
@@ -175,6 +172,22 @@
                         </div>
                         <div class="col-75">
                           <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                          <label for="lname">Email Address</label>
+                        </div>
+                        <div class="col-75">
+                          <input type="text" id="e-mail" name="Email Address" placeholder="Your e-mail..">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                          <label for="phoneNumber">Phone Number</label>
+                        </div>
+                        <div class="col-75">
+                          <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Your phone Number..">
                         </div>
                       </div>
                       <div class="row">
@@ -201,19 +214,18 @@
                       </div>
                       <div class="row">
                         <div class="col-25">
-                          <label for="subject">Subject</label>
+                          <label for="subject">Message</label>
                         </div>
                         <div class="col-75">
-                          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                          <textarea id="subject" name="subject" placeholder="Type here....." style="height:200px"></textarea>
                         </div>
                       </div>
-                      <div class="row">
-                        <input type="submit" value="Submit">
-                      </div>
-                      </form>
+                    <div class="row">
+                     <input type="submit" onclick="sendEmail" value="Send Email">
                     </div>
-            
-          </div>
+                </form>
+             </div>
+           </div>
         </div>
       </div>
     </div>
@@ -232,6 +244,46 @@
               </p>
             </div>
           </footer>
-    
+      <!-- Below script allows browsers to ensure that resources hosted on third-party servers have not been tampered with.-->
+      <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <script type="text/javascript">
+      function sendEmail(){
+          var name = $("#fname");
+          var Email = $("#e-mail");
+          var subject = $("subject");
+          var phoneNumber = $("phoneNumber");
+      }
+      if(isNotEmpty(name) && isNotEmpty(e-mail) && isNotEmpty(subject) && isNotEmpty(phoneNumber)){
+          $.ajax({
+           url: './sendMail.php',
+           method: 'POST',
+           dataType: 'json',
+           date:{
+               name: fname.val(),
+               Email: e-mail.val(),
+               subject: subject.val(),
+               phoneNumber: phoneNumber.val()
+
+
+           }, success: function(response){
+               $('#myForm')[o].reset();
+               $('.sent-notification').txt("message sent successfully");
+           }   
+          });
+      }
+      function isNotEmpty(caller){
+       if(caller.val()==""){
+           caller.css('border', '2px solid red');
+           return false;
+        }
+        else {
+            caller.css('border',)
+            return true;
+        }  
+
+      }
+
+      </script>
     </body>
 </html>
