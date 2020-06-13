@@ -1,57 +1,77 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MASAFA</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css"
-    />
-    
-    <script
-      defer
-      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
-    ></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="styles/debug.css">
+
+    <style>
+    .hero{
+        background: white url(images/cargo3.jpeg) center /cover;
+    }
+
+    @media (max-width: 1024px){.hero{background: black url(images/header.jpeg) center /cover;}}
+    @media (max-width: 768px){.hero{background: black url(images/header.jpeg) center /cover;}}
+
+
+    </style>
     
   </head>
-
-
   <body>
-<section> 
+      <!-- .hero Section-->
+      <section class="hero is-fullheight">
 
-    <div class="tabs is-centered-left notification is-danger ">
-        <ul>
-          <li class="is-active">
-            <a href="index.html">
-              <span class="icon is-small"><i class="fas fa-home" aria-hidden="true"></i></span>
-              <span><strong>HOME</strong></span>
-            </a>
-          </li>
-          <li>
-            <a href="about.html">
-              <span class="icon is-small"><i class="fas fa-store" aria-hidden="true"></i></span>
-              <span><strong>ABOUT US</strong></span>
-            </a>
-          </li>
-          <li>
-            <a href="services.html">
-              <span class="icon is-small"><i class="fas fa-truck" aria-hidden="true"></i></span>
-              <span><strong> SERVICES</strong></span>
-            </a>
-          </li>
-          <li>
-            <a href="contactus.html">
-              <span class="icon is-small"><i class="far fa-envelope" aria-hidden="true"></i></span>
-              <span><strong>CONTACT US</strong></span>
-            </a>
-          </li>
-        </ul>
-        <label for="text"><strong> Parcel Tracker<strong></label>
-        <input type="text" placeholder="Parcel Tracker" style="direction: rtl; text-align: left;">
-      </div>
+        <!-- Hero-Head-->
+        <div class="hero-head">
+            <nav>
+            <div class="columns is-mobile is-marginless heading has-text-weight-bold has-text-aqua">
+                     <div class="column right">
+                        <li class="is-active">
+                            <a href="index.html">
+                             <button class="button is-medium color is-danger">
+                            <span class="icon is-medium">
+                            <i class="fa fa-home"></i>
+                            <strong>HOME<strong></button></span>
+                            </a>
+                        </li>
+                        <li class="is-active">
+                            <a href="about.html">
+                        <button class="button is-medium color is-danger" sty><span><strong>ABOUT US <strong></button></span>
+                        </a>
+                        </li>
+                        <li class="is-active">
+                            <a href="contactus.html">
+                        <button class="button is-medium color is-danger"><span><strong>CONTACT US<strong></button></span>
+                        </a>
+                        </li>
+                            <br>
+                           <p class="top-corner"> <br>
+                            <label class="is-small" for="ParcelTraker box" style="direction: rtl;"><strong style="color: black; border: 1ch; border-color: black;">Parcel Tracker</strong></label>
+                            <input type="text" placeholder="Parcel Tracker" style="direction: rtl; text-align: left; width: 200px; height: 40px; border: 10rem; background-color:rgb(223, 224, 202);"> <button  class="button is-small notification is-active is-bold" style="direction: ltr; text-align: right; background-color: rgb(230, 240, 195);"><strong>TRACK</strong> </button>
+                           </p> 
+                    </div>
+                    <div class="column center">
+                        <h1 class="title" style="color: red;"><strong>Call US ON +27 83 599 5695 <strong> </h1>
+                    </div>
+                    <div class="column right">
+                        <figure class="navbar-item image">
+                            <img src="images/logo.png" style="width: 280px;">
+                        </figure>
+                        </div>
+ 
+             </div> 
+            </nav>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.254266528101!2d28.090973514685842!3d-26.188405769690632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950e0a74c242dd%3A0xdbf96bf2b57d3b0e!2sMasafa%20Logistics!5e0!3m2!1sen!2sza!4v1590498670750!5m2!1sen!2sza" width="100%" height="120" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
-</section>
+            
+
+
+            </div>
+
 <body>
     <section class="section">
         
